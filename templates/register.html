@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register - Migration Intel</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f2f5; }
+        .box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 300px; }
+        input { width: 100%; padding: 10px; margin: 10px 0; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background: #42b72a; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        .link { text-align: center; margin-top: 10px; display: block; font-size: 0.9em; }
+        .error { color: red; font-size: 0.8em; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2 style="text-align:center;">Register</h2>
+        {% if error %} <p class="error">{{ error }}</p> {% endif %}
+        <form method="POST">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Create Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <a href="/login" class="link">Already have an account? Login</a>
+    </div>
+</body>
+</html>

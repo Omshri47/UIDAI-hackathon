@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Migration Reports</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; background: #f4f7f6; }
+        
+        /* Reused Sidebar Style */
+        .sidebar { width: 250px; background: #2c3e50; color: white; padding: 20px; display: flex; flex-direction: column; }
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; }
+        .menu-item { padding: 10px; color: white; text-decoration: none; display: block; margin-bottom: 10px; border-radius: 4px; }
+        .menu-item:hover, .active { background: #34495e; }
+        .logout { margin-top: auto; background: #e74c3c; text-align: center; }
+
+        /* Main Content */
+        .main { flex: 1; padding: 30px; overflow-y: auto; }
+        .header { margin-bottom: 30px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+
+        /* Report Table */
+        .report-card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th { text-align: left; background: #ecf0f1; padding: 12px; color: #2c3e50; }
+        td { padding: 12px; border-bottom: 1px solid #eee; }
+        
+        /* Buttons */
+        .btn-download { background: #27ae60; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-size: 0.9rem; }
+        .btn-generate { background: #2980b9; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; float: right; }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>UIDAI Analytics</h2>
+        <a href="/dashboard" class="menu-item">Dashboard</a>
+        <a href="/reports" class="menu-item active">Reports</a>
+        <a href="/settings" class="menu-item">Settings</a>
+        <a href="/logout" class="menu-item logout">Logout</a>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>Generated Migration Reports</h1>
+        </div>
+
+        <div class="report-card">
+            <div style="overflow: hidden; margin-bottom: 20px;">
+                <h3>Available Exports</h3>
+                <button class="btn-generate" onclick="alert('Generating new report...')">+ Generate New Report</button>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Report Name</th>
+                        <th>Date Generated</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Weekly_Migration_Hubs.csv</td>
+                        <td>Jan 19, 2026</td>
+                        <td>CSV</td>
+                        <td>450 KB</td>
+                        <td><a href="#" class="btn-download">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>High_Risk_Districts_Summary.pdf</td>
+                        <td>Jan 15, 2026</td>
+                        <td>PDF</td>
+                        <td>1.2 MB</td>
+                        <td><a href="#" class="btn-download">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Demographic_Shift_Q4.xlsx</td>
+                        <td>Jan 01, 2026</td>
+                        <td>Excel</td>
+                        <td>2.4 MB</td>
+                        <td><a href="#" class="btn-download">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

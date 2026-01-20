@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>System Settings</title>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; display: flex; height: 100vh; background: #f4f7f6; }
+        
+        /* Sidebar */
+        .sidebar { width: 250px; background: #2c3e50; color: white; padding: 20px; display: flex; flex-direction: column; }
+        .sidebar h2 { font-size: 1.2rem; margin-bottom: 30px; }
+        .menu-item { padding: 10px; color: white; text-decoration: none; display: block; margin-bottom: 10px; border-radius: 4px; }
+        .menu-item:hover, .active { background: #34495e; }
+        .logout { margin-top: auto; background: #e74c3c; text-align: center; }
+
+        /* Main Content */
+        .main { flex: 1; padding: 30px; overflow-y: auto; }
+        .header { margin-bottom: 30px; border-bottom: 2px solid #ddd; padding-bottom: 10px; }
+
+        /* Settings Forms */
+        .settings-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); max-width: 600px; margin-bottom: 20px; }
+        
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #555; }
+        input[type="text"], input[type="email"], input[type="password"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        
+        .btn-save { background: #3498db; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem; }
+        .btn-save:hover { background: #2980b9; }
+
+        /* Toggle Switch */
+        .switch-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        input[type="checkbox"] { transform: scale(1.5); }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>UIDAI Analytics</h2>
+        <a href="/dashboard" class="menu-item">Dashboard</a>
+        <a href="/reports" class="menu-item">Reports</a>
+        <a href="/settings" class="menu-item active">Settings</a>
+        <a href="/logout" class="menu-item logout">Logout</a>
+    </div>
+
+    <div class="main">
+        <div class="header">
+            <h1>System Settings</h1>
+        </div>
+
+        <div class="settings-card">
+            <h3>👤 User Profile</h3>
+            <form>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" value="{{ user }}" readonly style="background: #e9e9e9;">
+                </div>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name">
+                </div>
+                <button type="button" class="btn-save" onclick="alert('Profile Updated!')">Save Changes</button>
+            </form>
+        </div>
+
+        <div class="settings-card">
+            <h3>🔔 Alerts & Notifications</h3>
+            <div class="switch-container">
+                <label>Email Alert: High Migration Spike</label>
+                <input type="checkbox" checked>
+            </div>
+            <div class="switch-container">
+                <label>Weekly Summary Report</label>
+                <input type="checkbox" checked>
+            </div>
+            <div class="switch-container">
+                <label>System Maintenance Alerts</label>
+                <input type="checkbox">
+            </div>
+            <br>
+            <button type="button" class="btn-save" onclick="alert('Preferences Saved!')">Update Preferences</button>
+        </div>
+    </div>
+</body>
+</html>
